@@ -20,6 +20,8 @@ typedef void(^EndBlock)(void);
 
 - (void)stopSmartLink;
 
+- (NSString *)getSmartLinkVersion;
+
 @end
 
 NS_ASSUME_NONNULL_END
