@@ -137,6 +137,8 @@
         contC[contC_len++]=ustrLen;
 #endif
     }
+    
+    NSLog(@"Before sprintf");
     sprintf(&(contC[contC_len]), "%s", [ssidStr UTF8String]);
     contC_len+=ssidLen;//[ssidStr length];
     sprintf(&(contC[contC_len]), "%s", [pswdStr UTF8String]);
@@ -196,6 +198,7 @@
     }
     isconnnecting = true;
     //开始配置线程
+    NSLog(@"开始配置线程");
     [[[NSOperationQueue alloc]init]addOperationWithBlock:^(){
         [self connectV70];
     }];
