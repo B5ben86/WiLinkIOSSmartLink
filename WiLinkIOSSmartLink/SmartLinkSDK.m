@@ -6,6 +6,7 @@
 //
 
 #import "SmartLinkSDK.h"
+#import "HFSmartLink.h"
 
 @interface SmartLinkSDK()
 
@@ -19,17 +20,17 @@
 
 @implementation SmartLinkSDK
 
-- (void)initSmartlinkV7 {
+- (void)initSmartlink {
     self.smartLinkV7 = [HFSmartLink shareInstence];
-    [self stopSmartLinkV7];
+    [self stopSmartLink];
 
     self.smartLinkV7.isConfigOneDevice = YES;
     self.smartLinkV7.waitTimers = 20;
 }
 
-- (void)startSmartlinkV7:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(SmartLinkProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock {
+- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
     if (self.smartLinkV7 == NULL) {
-        [self initSmartlinkV7];
+        [self initSmartlink];
     }
     if (self.smartLinkV7) {
         self.ip = @"";
@@ -52,12 +53,13 @@
                 NSLog(@"smartlink failure : %@", failMsg);
             });
         }                      endBlock:^(NSDictionary *deviceDic) {
-            [self stopSmartLinkV7];
+            [self stopSmartLink];
+            eblock();
         }];
     }
 }
 
-- (void)stopSmartLinkV7 {
+- (void)stopSmartLink {
     if (self.smartLinkV7) {
         [self.smartLinkV7 stopWithBlock:^(NSString *stopMsg, BOOL isOk) {
         }];

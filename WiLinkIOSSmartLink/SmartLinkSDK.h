@@ -6,17 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HFSmartLink.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^ProcessBlock)(NSInteger progress);
 typedef void(^SuccessBlock)(NSString *ip, NSString *mac);
+typedef void(^FailureBlock)(NSString *msg);
+typedef void(^EndBlock)(void);
 
 @interface SmartLinkSDK : NSObject
 
-- (void)startSmartlinkV7:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(SmartLinkProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock;
+- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock;
 
-- (void)stopSmartLinkV7;
+- (void)stopSmartLink;
 
 @end
 
