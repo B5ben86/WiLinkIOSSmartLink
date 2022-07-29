@@ -6,6 +6,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "WiLinkIOSSmartLink/SmartLinkSDK.h"
 
 @interface WiLinkIOSSmartLinkTests : XCTestCase
 
@@ -24,12 +25,27 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSString *ssid = @"SENTRAY";
+    NSString *pwd = @"whsentray";
+    
+    [[[SmartLinkSDK alloc]init] startSmartlink:ssid wifiPwd:pwd processBlock:^(NSInteger progress) {
+        NSLog(@"progress : %ld", (long)progress);
+        } successBlock:^(NSString * _Nonnull ip, NSString * _Nonnull mac) {
+            NSLog(@"succeed : ip : %@ , mac : %@", ip, mac);
+        } failBlock:^(NSString * _Nonnull msg) {
+            NSLog(@"failure : %@", msg);
+        } endBlock:^{
+            NSLog(@"end");
+        }];
+    
+    sleep(1000);
 }
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
+        
     }];
 }
 

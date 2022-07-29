@@ -21,11 +21,13 @@
 @implementation SmartLinkSDK
 
 - (void)initSmartlink {
+    NSLog(@"初始化 Smartlink");
     self.smartLinkV7 = [HFSmartLink shareInstence];
     [self stopSmartLink];
 
     self.smartLinkV7.isConfigOneDevice = YES;
     self.smartLinkV7.waitTimers = 20;
+    NSLog(@"初始化 Smartlink 结束");
 }
 
 - (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
