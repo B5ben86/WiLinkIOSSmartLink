@@ -92,7 +92,7 @@
 -(void)startWithSSID:(NSString*)ssidStr Key:(NSString*)pswdStr UserStr:(NSString *)userStr withV3x:(BOOL)v3x processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock
 
 {
-    NSLog(@"to send...");
+    NSLog(@"to send test...");
     withV3x=v3x;
     if(udp){
         [udp CreateBindSocket];
