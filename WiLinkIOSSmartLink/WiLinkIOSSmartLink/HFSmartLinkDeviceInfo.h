@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HFSmartLinkDeviceInfo : NSObject
-@property(nonatomic, strong) NSString *ip;
-@property(nonatomic, strong) NSString *mac;
+@property (nonatomic,strong) NSString * ip;
+@property (nonatomic,strong) NSString * mac;
 @end

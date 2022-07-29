@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SmartLinkSDK/SmartLinkSDK.h"
+#import <SmartLinkSDK.h>
 
 //! Project version number for WiLinkIOSSmartLink.
 FOUNDATION_EXPORT double WiLinkIOSSmartLinkVersionNumber;

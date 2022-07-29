@@ -10,60 +10,54 @@
 #import "HFSmartLinkDeviceInfo.h"
 
 typedef void(^SmartLinkProcessBlock)(NSInteger process);
-
 /**
  *  设置成功以后的Block
  *
- *  @param dev 设备
  */
 typedef void(^SmartLinkSuccessBlock)(HFSmartLinkDeviceInfo *dev);
-
 /**
  *  设置失败的信息
  *
  *  @param failmsg 失败信息
  */
-typedef void(^SmartLinkFailBlock)(NSString *failmsg);
-
+typedef void(^SmartLinkFailBlock)(NSString * failmsg);
 /**
  *   用户手动停掉的block
  *
  *  @param stopMsg 停止的信息
  *  @param isOk    是否停止成功
  */
-typedef void(^SmartLinkStopBlock)(NSString *stopMsg, BOOL isOk);
-
+typedef void(^SmartLinkStopBlock)(NSString *stopMsg,BOOL isOk);
 /**
  *  关闭服务的Block
  *
  *  @param closeMsg 关闭的信息
  *  @param isOK     是否关闭成功
  */
-typedef void(^SmartLinkCloseBlock)(NSString *closeMsg, BOOL isOK);
-
+typedef void(^SmartLinkCloseBlock)(NSString * closeMsg,BOOL isOK);
 /**
  *  发现设备的block
  *
  *  @param deviceDic 发现的设备
  */
-typedef void(^SmartLinkEndblock)(NSDictionary *deviceDic);
+typedef void(^SmartLinkEndblock)(NSDictionary * deviceDic);
 
 @interface HFSmartLink : NSObject
 /**
  *  是否配置单个设备，或者多个设备 默认false
  */
-@property(nonatomic) BOOL isConfigOneDevice;
+@property (nonatomic) BOOL isConfigOneDevice;
 /**
  *  配置信息发送完成以后，等待搜索设备的时间 second 默认15
  */
-@property(nonatomic) NSInteger waitTimers;
+@property (nonatomic) NSInteger waitTimers;
 
 /**
  *  获取smartlink 的单例
  *
  *  @return 返回smartlink的单例
  */
-+ (instancetype)shareInstence;
++(instancetype)shareInstence;
 /**
  *  开始配置 block不能为nil
  *
@@ -75,7 +69,7 @@ typedef void(^SmartLinkEndblock)(NSDictionary *deviceDic);
  */
 //-(void)startWithKey:(NSString*)key processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock;
 
-- (void)startWithSSID:(NSString *)ssid Key:(NSString *)key withV3x:(BOOL)v3x processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock;
+-(void)startWithSSID:(NSString*)ssid Key:(NSString*)key UserStr:(NSString *)userStr withV3x:(BOOL)v3x processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock;
 // for smartlink V7.0
 //-(void)startWithContent:(char *)content lenght:(int)len key:(NSString *)key withV3x:(BOOL)v3x processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock;
 /**
@@ -83,12 +77,11 @@ typedef void(^SmartLinkEndblock)(NSDictionary *deviceDic);
  *
  *  @param block 停止配置的block
  */
-- (void)stopWithBlock:(SmartLinkStopBlock)block;
-
+-(void)stopWithBlock:(SmartLinkStopBlock)block;
 /**
  *  关闭整个Smartlink服务，再次调用的时候必须 从头开始 初始化。
  *
  *  @param block 关闭服务block
  */
-- (void)closeWithBlock:(SmartLinkCloseBlock)block;
+-(void)closeWithBlock:(SmartLinkCloseBlock)block;
 @end

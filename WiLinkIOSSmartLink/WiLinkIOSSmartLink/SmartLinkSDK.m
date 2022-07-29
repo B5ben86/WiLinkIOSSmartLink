@@ -6,9 +6,6 @@
 //
 
 #import "SmartLinkSDK.h"
-#import "HFSmartLink.h"
-
-typedef void(^SuccessBlock)(NSString *ip, NSString *mac);
 
 @interface SmartLinkSDK()
 
@@ -31,11 +28,14 @@ typedef void(^SuccessBlock)(NSString *ip, NSString *mac);
 }
 
 - (void)startSmartlinkV7:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(SmartLinkProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock {
+    if (self.smartLinkV7 == NULL) {
+        [self initSmartlinkV7];
+    }
     if (self.smartLinkV7) {
         self.ip = @"";
         self.macNew = @"";
 
-        [self.smartLinkV7 startWithSSID:ssid Key:self.pwd withV3x:true processblock:^(NSInteger pro) {
+        [self.smartLinkV7 startWithSSID:ssid Key:self.pwd UserStr:@"" withV3x:true processblock:^(NSInteger pro) {
             
             pblock(pro);
         }                  successBlock:^(HFSmartLinkDeviceInfo *dev) {
@@ -58,11 +58,13 @@ typedef void(^SuccessBlock)(NSString *ip, NSString *mac);
 }
 
 - (void)stopSmartLinkV7 {
-    [self.smartLinkV7 stopWithBlock:^(NSString *stopMsg, BOOL isOk) {
-    }];
+    if (self.smartLinkV7) {
+        [self.smartLinkV7 stopWithBlock:^(NSString *stopMsg, BOOL isOk) {
+        }];
 
-    [self.smartLinkV7 closeWithBlock:^(NSString *closeMsg, BOOL isOK) {
-    }];
+        [self.smartLinkV7 closeWithBlock:^(NSString *closeMsg, BOOL isOK) {
+        }];
+    }
 }
 
 
