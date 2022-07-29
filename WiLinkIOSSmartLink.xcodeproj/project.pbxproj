@@ -13,7 +13,6 @@
 		B537F8A428927FF400ACFD8C /* WiLinkIOSSmartLink.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F89628927FF400ACFD8C /* WiLinkIOSSmartLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B537F8B42892842900ACFD8C /* HFSmartLinkDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8AF2892842900ACFD8C /* HFSmartLinkDeviceInfo.h */; };
 		B537F8B72892842900ACFD8C /* HFSmartLink.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8B22892842900ACFD8C /* HFSmartLink.h */; };
-		B537F8BE289284FE00ACFD8C /* SmartLinkSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B537F8BF289284FE00ACFD8C /* SmartLinkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8BD289284FE00ACFD8C /* SmartLinkSDK.m */; };
 		B537F8CD2892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8C52892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m */; };
 		B537F8D928936A4A00ACFD8C /* Udpproxy2.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D228936A4A00ACFD8C /* Udpproxy2.m */; };
@@ -21,6 +20,7 @@
 		B537F8DB28936A4A00ACFD8C /* Udpproxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D428936A4A00ACFD8C /* Udpproxy.m */; };
 		B537F8DE28936A4A00ACFD8C /* Udpproxy2.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8D728936A4A00ACFD8C /* Udpproxy2.h */; };
 		B537F8DF28936A4A00ACFD8C /* Udpproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8D828936A4A00ACFD8C /* Udpproxy.h */; };
+		B537F8E02893B63C00ACFD8C /* SmartLinkSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,8 +126,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B537F8BE289284FE00ACFD8C /* SmartLinkSDK.h in Headers */,
 				B537F8B42892842900ACFD8C /* HFSmartLinkDeviceInfo.h in Headers */,
+				B537F8E02893B63C00ACFD8C /* SmartLinkSDK.h in Headers */,
 				B537F8DE28936A4A00ACFD8C /* Udpproxy2.h in Headers */,
 				B537F8B72892842900ACFD8C /* HFSmartLink.h in Headers */,
 				B537F8DF28936A4A00ACFD8C /* Udpproxy.h in Headers */,
