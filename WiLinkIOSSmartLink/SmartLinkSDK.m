@@ -8,12 +8,12 @@
 #import "SmartLinkSDK.h"
 #import "HFSmartLink.h"
 
+@implementation SmartLinkDeviceFound
+
+@end
+
 @interface SmartLinkSDK()
 
-@property(nonatomic, retain) NSString *ssid;
-@property(nonatomic, retain) NSString *pwd;
-@property(nonatomic, retain) NSString *ip;
-@property (nonatomic, strong) NSString *macNew;
 @property (nonatomic, strong) HFSmartLink *smartLinkV7;
 
 @end
@@ -21,39 +21,31 @@
 @implementation SmartLinkSDK
 
 - (void)initSmartlink {
-    NSLog(@"初始化 Smartlink");
-    self.smartLinkV7 = [HFSmartLink shareInstence];
     [self stopSmartLink];
-
+    self.smartLinkV7 = [HFSmartLink shareInstence];
     self.smartLinkV7.isConfigOneDevice = YES;
     self.smartLinkV7.waitTimers = 20;
-    NSLog(@"初始化 Smartlink 结束");
 }
 
-- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
+- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd isConfigOneDeviceOnly:(BOOL)isConfigOneDeviceOnly processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
     if (self.smartLinkV7 == NULL) {
         [self initSmartlink];
     }
     if (self.smartLinkV7) {
-        self.ip = @"";
-        self.macNew = @"";
+        self.smartLinkV7.isConfigOneDevice = isConfigOneDeviceOnly;
 
-        [self.smartLinkV7 startWithSSID:ssid Key:self.pwd UserStr:@"" withV3x:true processblock:^(NSInteger pro) {
-            
+        [self.smartLinkV7 startWithSSID:ssid Key:wifiPwd UserStr:@"" withV3x:true processblock:^(NSInteger pro) {
             pblock(pro);
         }                  successBlock:^(HFSmartLinkDeviceInfo *dev) {
-            self.ip = dev.ip;
-            self.macNew = dev.mac;
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                sblock(self.ip, self.macNew);
-                NSLog(@"smartlink success!");
-            });
+            SmartLinkDeviceFound *deviceFound = [[SmartLinkDeviceFound alloc] init];
+            deviceFound.ip = dev.ip;
+            deviceFound.mac = dev.mac;
+            sblock(deviceFound);
+            
+            NSLog(@"smartlink success!");
         }                     failBlock:^(NSString *failMsg) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                fblock(failMsg);
-                NSLog(@"smartlink failure : %@", failMsg);
-            });
+            fblock(failMsg);
+            NSLog(@"smartlink failure : %@", failMsg);
         }                      endBlock:^(NSDictionary *deviceDic) {
             [self stopSmartLink];
             eblock();
@@ -67,12 +59,11 @@
         }];
 
         [self.smartLinkV7 closeWithBlock:^(NSString *closeMsg, BOOL isOK) {
+            
         }];
+        
+        self.smartLinkV7 = NULL;
     }
-}
-
-- (NSString *)getSmartLinkVersion {
-    return @"0.0.7";
 }
 
 

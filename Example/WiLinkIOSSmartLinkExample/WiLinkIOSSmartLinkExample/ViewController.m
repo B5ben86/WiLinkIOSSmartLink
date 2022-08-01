@@ -20,16 +20,6 @@
     
     NSString *ssid = @"SENTRAY";
     NSString *pwd = @"whsentray";
-
-    [[[SmartLinkSDK alloc]init] startSmartlink:ssid wifiPwd:pwd processBlock:^(NSInteger progress) {
-        NSLog(@"progress : %ld", (long)progress);
-        } successBlock:^(NSString * _Nonnull ip, NSString * _Nonnull mac) {
-            NSLog(@"succeed : ip : %@ , mac : %@", ip, mac);
-        } failBlock:^(NSString * _Nonnull msg) {
-            NSLog(@"failure : %@", msg);
-        } endBlock:^{
-            NSLog(@"end");
-        }];
 }
 
 

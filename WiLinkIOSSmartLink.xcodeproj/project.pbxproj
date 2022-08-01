@@ -72,6 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52E40A22897B089008CD952 /* HFSmartLinkLib */ = {
+			isa = PBXGroup;
+			children = (
+				B537F8D628936A4A00ACFD8C /* hf-pmk-generator.c */,
+				B537F8D528936A4A00ACFD8C /* hf-pmk-generator.h */,
+				B537F8B22892842900ACFD8C /* HFSmartLink.h */,
+				B537F8D328936A4A00ACFD8C /* HFSmartLink.m */,
+				B537F8AF2892842900ACFD8C /* HFSmartLinkDeviceInfo.h */,
+				B537F8C52892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m */,
+				B537F8D828936A4A00ACFD8C /* Udpproxy.h */,
+				B537F8D428936A4A00ACFD8C /* Udpproxy.m */,
+				B537F8D728936A4A00ACFD8C /* Udpproxy2.h */,
+				B537F8D228936A4A00ACFD8C /* Udpproxy2.m */,
+			);
+			path = HFSmartLinkLib;
+			sourceTree = "<group>";
+		};
 		B537F88928927FF400ACFD8C = {
 			isa = PBXGroup;
 			children = (
@@ -93,18 +110,9 @@
 		B537F89528927FF400ACFD8C /* WiLinkIOSSmartLink */ = {
 			isa = PBXGroup;
 			children = (
-				B537F8D628936A4A00ACFD8C /* hf-pmk-generator.c */,
-				B537F8D528936A4A00ACFD8C /* hf-pmk-generator.h */,
-				B537F8B22892842900ACFD8C /* HFSmartLink.h */,
-				B537F8D328936A4A00ACFD8C /* HFSmartLink.m */,
-				B537F8AF2892842900ACFD8C /* HFSmartLinkDeviceInfo.h */,
-				B537F8C52892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m */,
+				B52E40A22897B089008CD952 /* HFSmartLinkLib */,
 				B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */,
 				B537F8BD289284FE00ACFD8C /* SmartLinkSDK.m */,
-				B537F8D828936A4A00ACFD8C /* Udpproxy.h */,
-				B537F8D428936A4A00ACFD8C /* Udpproxy.m */,
-				B537F8D728936A4A00ACFD8C /* Udpproxy2.h */,
-				B537F8D228936A4A00ACFD8C /* Udpproxy2.m */,
 				B537F89728927FF400ACFD8C /* WiLinkIOSSmartLink.docc */,
 				B537F89628927FF400ACFD8C /* WiLinkIOSSmartLink.h */,
 			);

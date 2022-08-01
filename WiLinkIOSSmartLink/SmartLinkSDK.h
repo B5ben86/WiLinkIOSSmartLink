@@ -9,18 +9,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface SmartLinkDeviceFound : NSObject
+
+@property (nonatomic, strong) NSString* ip;
+@property (nonatomic, strong) NSString* mac;
+
+@end
+
 typedef void(^ProcessBlock)(NSInteger progress);
-typedef void(^SuccessBlock)(NSString *ip, NSString *mac);
-typedef void(^FailureBlock)(NSString *msg);
+typedef void(^SuccessBlock)(SmartLinkDeviceFound *deviceFound);
+typedef void(^FailureBlock)(NSString *failureMessage);
 typedef void(^EndBlock)(void);
+//typedef void(^EndBlock)(NSArray<SmartLinkDeviceFound *> *deviceFoundList);
+//typedef void(^EndBlock)(NSDictionary<NSString *, SmartLinkDeviceFound *> *deviceFoundMap);
+
 
 @interface SmartLinkSDK : NSObject
 
-- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock;
+- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd isConfigOneDeviceOnly:(BOOL)isConfigOneDeviceOnly processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock;
 
 - (void)stopSmartLink;
-
-- (NSString *)getSmartLinkVersion;
 
 @end
 

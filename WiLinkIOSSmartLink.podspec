@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "WiLinkIOSSmartLink/*.h", "WiLinkIOSSmartLink/*.{h,m,a}"
+  spec.source_files  = "WiLinkIOSSmartLink/*.h", "WiLinkIOSSmartLink/*.{h,m,a}", "WiLinkIOSSmartLink/HFSmartLinkLib/*.{h,m,a}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "WiLinkIOSSmartLink/*.h"

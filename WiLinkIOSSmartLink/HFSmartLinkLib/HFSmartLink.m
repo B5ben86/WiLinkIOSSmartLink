@@ -8,7 +8,6 @@
 
 #import "HFSmartLink.h"
 #import "Udpproxy.h"
-//#include "hf-pmk-generator.h"
 #import <CommonCrypto/CommonKeyDerivation.h>
 
 #define SMTV30_BASELEN      76
@@ -92,7 +91,7 @@
 -(void)startWithSSID:(NSString*)ssidStr Key:(NSString*)pswdStr UserStr:(NSString *)userStr withV3x:(BOOL)v3x processblock:(SmartLinkProcessBlock)pblock successBlock:(SmartLinkSuccessBlock)sblock failBlock:(SmartLinkFailBlock)fblock endBlock:(SmartLinkEndblock)eblock
 
 {
-    NSLog(@"to send test...");
+    NSLog(@"to send test... : ssid = %@, pwd = %@, userStr = %@", ssidStr, pswdStr, userStr);
     withV3x=v3x;
     if(udp){
         [udp CreateBindSocket];
@@ -137,15 +136,15 @@
         contC[contC_len++]=ustrLen;
 #endif
     }
-    
-    NSLog(@"Before sprintf");
     sprintf(&(contC[contC_len]), "%s", [ssidStr UTF8String]);
     contC_len+=ssidLen;//[ssidStr length];
     sprintf(&(contC[contC_len]), "%s", [pswdStr UTF8String]);
     contC_len+=pswdLen;//[pswdStr length];
     if (pswdLen/*[pswdStr length]*/!=0)
     {
+        NSLog(@"Before memcpy");
         memcpy(&(contC[contC_len]), buf, 32);
+        NSLog(@"After memcpy");
         contC_len+=32;
     }
     if (ustrLen>0)
@@ -229,20 +228,14 @@
 }
 -(void)closeWithBlock:(SmartLinkCloseBlock)block{
     if(isconnnecting){
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            block(@"please stop connect frist",false);
-        });
+        block(@"please stop connect frist",false);
     }
     
     if(udp){
         [udp close];
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            block(@"close Ok",true);
-        });
+        block(@"close Ok",true);
     }else{
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            block(@"udp sock is Closed,on need Close more",false);
-        });
+        block(@"udp sock is Closed,on need Close more",false);
     }
 }
 
@@ -349,38 +342,30 @@
 
         [deviceDic setObject:dev forKey:dev.mac];
         
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            self->successBlock(dev);
-        });
+        successBlock(dev);
         
         if (self.isConfigOneDevice) {
             NSLog(@"end config once");
             isconnnecting = false;
-            dispatch_async(dispatch_get_main_queue(), ^(){
-                self->endBlock(self->deviceDic);
-            });
+            endBlock(deviceDic);
             [udp close];
             return ;
         }
     }
     
     if(userStoping){
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            self->stopBlock(@"stop connect ok",true);
-        });
+        stopBlock(@"stop connect ok",true);
+        
     }
     
     if(deviceDic.count <= 0&&!userStoping){
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            self->failBlock(@"smartLink fail ,no device is configed");
-        });
+        failBlock(@"smartLink fail ,no device is configed");
     }
     
     [udp close];
     
-    dispatch_async(dispatch_get_main_queue(), ^(){
-        self->endBlock(self->deviceDic);
-    });
+    endBlock(deviceDic);
+
 }
 
 - (int) getByte:(unsigned char *)bytes pos:(int)pos
