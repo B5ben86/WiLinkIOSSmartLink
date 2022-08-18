@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
 @interface Udpproxy2 : NSObject
 +(instancetype)shareInstence;
@@ -15,6 +15,6 @@
 -(void)send:(char*)shit;
 -(void)sendMCast:(char*)shit withAddr:(char *)addr andSN:(int)sn;
 -(void)sendSmartLinkFind;
--(HFSmartLinkDeviceInfo*)recv;
+-(WLHFSmartLinkDeviceInfo*)recv;
 -(void)close;
 @end

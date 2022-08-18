@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 HF. All rights reserved.
 //
 
-#import "HFSmartLink.h"
-#import "Udpproxy.h"
+#import "WLHFSmartLink.h"
+#import "WLUdpproxy.h"
 #import <CommonCrypto/CommonKeyDerivation.h>
 
 #define SMTV30_BASELEN      76
@@ -19,7 +19,7 @@
 // for 机智云
 //#define GIZWITS
 
-@implementation HFSmartLink{
+@implementation WLHFSmartLink{
     SmartLinkProcessBlock processBlock;
     SmartLinkSuccessBlock successBlock;
     SmartLinkFailBlock failBlock;
@@ -39,15 +39,15 @@
     BOOL userStoping;
     NSInteger sendTime;
     NSMutableDictionary *deviceDic;
-    Udpproxy * udp;
+    WLUdpproxy * udp;
     BOOL withV3x;
 }
 
 +(instancetype)shareInstence{
-    static HFSmartLink * me = nil;
+    static WLHFSmartLink * me = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-         me = [[HFSmartLink alloc]init];
+         me = [[WLHFSmartLink alloc]init];
     });
     return me;
 }
@@ -60,7 +60,7 @@
          *  初始化 套接字
          */
 //        [UdpProxy shaInstence];
-        udp = [Udpproxy shareInstence];
+        udp = [WLUdpproxy shareInstence];
         deviceDic = [[NSMutableDictionary alloc]init];
         self.isConfigOneDevice = true;
         self.waitTimers = 60;//15;
@@ -96,7 +96,7 @@
     if(udp){
         [udp CreateBindSocket];
     }else{
-        udp = [Udpproxy shareInstence];
+        udp = [WLUdpproxy shareInstence];
         [udp CreateBindSocket];
     }
 
@@ -331,7 +331,7 @@
 }
 -(void)recvNewModule{
     while (isconnnecting) {
-        HFSmartLinkDeviceInfo * dev = [udp recv:V8_RANDOM_NUM];
+        WLHFSmartLinkDeviceInfo * dev = [udp recv:V8_RANDOM_NUM];
         if(dev == nil){
             continue;
         }

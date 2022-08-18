@@ -8,7 +8,7 @@
 
 
 #import "Udpproxy2.h"
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
 #include <stdio.h> /* These are the usual header files */
 #include <string.h>
@@ -148,7 +148,7 @@
     sendto(sockfd, data, strlen(data), 0, (const struct sockaddr *)&findAdd, find_addr_len);
 }
 
--(HFSmartLinkDeviceInfo*)recv{
+-(WLHFSmartLinkDeviceInfo*)recv{
     char recvbuf[512]={0};
     //memset(recvbuf, 0, 512);
     socklen_t recv_addr_len = sizeof(clientAdd);
@@ -162,7 +162,7 @@
     if(strncmp(recvbuf, "smart_config", strlen("smart_config"))==0){
         NSLog(@"recv : %s",recvbuf);
         NSString * devStr = [NSString stringWithFormat:@"%s",recvbuf];
-        HFSmartLinkDeviceInfo * dev = [[HFSmartLinkDeviceInfo alloc]init];
+        WLHFSmartLinkDeviceInfo * dev = [[WLHFSmartLinkDeviceInfo alloc]init];
         
         NSArray *a = [devStr componentsSeparatedByString:@" "];
         

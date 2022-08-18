@@ -1,5 +1,5 @@
 //
-//  HFSmartLinkDeviceInfo.h
+//  WLHFSmartLinkDeviceInfo.h
 //  SmartlinkLib
 //
 //  Created by wangmeng on 15/3/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HFSmartLinkDeviceInfo : NSObject
+@interface WLHFSmartLinkDeviceInfo : NSObject
 @property (nonatomic,strong) NSString * ip;
 @property (nonatomic,strong) NSString * mac;
 @end

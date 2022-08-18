@@ -6,7 +6,7 @@
 //
 
 #import "SmartLinkSDK.h"
-#import "HFSmartLink.h"
+#import "WLHFSmartLink.h"
 
 @implementation SmartLinkDeviceFound
 
@@ -14,7 +14,7 @@
 
 @interface SmartLinkSDK()
 
-@property (nonatomic, strong) HFSmartLink *smartLinkV7;
+@property (nonatomic, strong) WLHFSmartLink *smartLinkV7;
 
 @end
 
@@ -22,7 +22,7 @@
 
 - (void)initSmartlink {
     [self stopSmartLink];
-    self.smartLinkV7 = [HFSmartLink shareInstence];
+    self.smartLinkV7 = [WLHFSmartLink shareInstence];
     self.smartLinkV7.isConfigOneDevice = YES;
     self.smartLinkV7.waitTimers = 20;
 }
@@ -38,7 +38,7 @@
 
         [self.smartLinkV7 startWithSSID:ssid Key:wifiPwd UserStr:@"" withV3x:true processblock:^(NSInteger pro) {
             pblock(pro);
-        }                  successBlock:^(HFSmartLinkDeviceInfo *dev) {
+        }                  successBlock:^(WLHFSmartLinkDeviceInfo *dev) {
             SmartLinkDeviceFound *deviceFound = [[SmartLinkDeviceFound alloc] init];
             deviceFound.ip = dev.ip;
             deviceFound.mac = dev.mac;

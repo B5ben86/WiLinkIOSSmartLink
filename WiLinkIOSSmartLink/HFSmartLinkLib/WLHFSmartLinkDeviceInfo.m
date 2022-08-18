@@ -1,13 +1,13 @@
 //
-//  HFSmartLinkDeviceInfo.m
+//  WLHFSmartLinkDeviceInfo.m
 //  SmartlinkLib
 //
 //  Created by wangmeng on 15/3/17.
 //  Copyright (c) 2015年 HF. All rights reserved.
 //
 
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
-@implementation HFSmartLinkDeviceInfo
+@implementation WLHFSmartLinkDeviceInfo
 
 @end

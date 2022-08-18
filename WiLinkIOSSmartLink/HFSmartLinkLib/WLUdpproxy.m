@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Peter. All rights reserved.
 //
 
-#import "Udpproxy.h"
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLUdpproxy.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
 #include <sys/socket.h>
 #include <netdb.h>
@@ -19,7 +19,7 @@
 #define MPORT 45999 /* Port that will be opened */
 #define MAXDATASIZE 100 /* Max number of bytes of data */
 
-@implementation Udpproxy
+@implementation WLUdpproxy
 {
     int sockfd; /* socket descriptors */
     int sockMCast;
@@ -37,10 +37,10 @@
 
 +(instancetype)shareInstence
 {
-    static Udpproxy *me = nil;
+    static WLUdpproxy *me = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        me = [[Udpproxy alloc]init];
+        me = [[WLUdpproxy alloc]init];
     });
     return me;
 }
@@ -219,7 +219,7 @@ NSString *HFModuleFindIP= @"";
     sendto(sockfd, data, strlen(data), 0, sendAddr->ai_addr, sendAddr->ai_addrlen);
 }
 
--(HFSmartLinkDeviceInfo *)recv:(unsigned char)random
+-(WLHFSmartLinkDeviceInfo *)recv:(unsigned char)random
 {
     char recvbuf[512]={0};
     struct sockaddr clientAdd;
@@ -245,7 +245,7 @@ NSString *HFModuleFindIP= @"";
                 if (a.count>=3 && [ip isEqualToString:[a objectAtIndex:0]])
                 {
                     NSLog(@"Dev:%@,%@,%@", [a objectAtIndex:0], [a objectAtIndex:1], [a objectAtIndex:2]);
-                    HFSmartLinkDeviceInfo *dev=[[HFSmartLinkDeviceInfo alloc] init];
+                    WLHFSmartLinkDeviceInfo *dev=[[WLHFSmartLinkDeviceInfo alloc] init];
                     dev.ip= ip;
                     dev.mac= [a objectAtIndex:1];
                     NSLog(@"Dev:%@,%@", dev.mac, dev.ip);
@@ -257,7 +257,7 @@ NSString *HFModuleFindIP= @"";
                 NSArray *a= [s componentsSeparatedByString:@" "];
                 if (a.count>=2 && [[a objectAtIndex:0] isEqualToString:@"smart_config"])
                 {
-                    HFSmartLinkDeviceInfo *dev=[[HFSmartLinkDeviceInfo alloc] init];
+                    WLHFSmartLinkDeviceInfo *dev=[[WLHFSmartLinkDeviceInfo alloc] init];
                     dev.mac = [a objectAtIndex:1];
                     dev.ip = ip;
                     return dev;
@@ -268,7 +268,7 @@ NSString *HFModuleFindIP= @"";
         {
             if ([[dict objectForKey:@"ip"] isEqualToString:ip])
             {
-                HFSmartLinkDeviceInfo *dev=[[HFSmartLinkDeviceInfo alloc] init];
+                WLHFSmartLinkDeviceInfo *dev=[[WLHFSmartLinkDeviceInfo alloc] init];
                 dev.mac = [dict objectForKey:@"mac"];
                 dev.ip = ip;
                 return dev;
@@ -289,7 +289,7 @@ NSString *HFModuleFindIP= @"";
     return nil;
 }
 
-//-(HFSmartLinkDeviceInfo *)recv{
+//-(WLHFSmartLinkDeviceInfo *)recv{
 //    char recvbuf[512]={0};
 //    struct sockaddr clientAdd;
 //    socklen_t recv_addr_len = sizeof(clientAdd);
@@ -317,7 +317,7 @@ NSString *HFModuleFindIP= @"";
 //                return nil;
 //            else
 //            {
-//                HFSmartLinkDeviceInfo *dev=[[HFSmartLinkDeviceInfo alloc] init];
+//                WLHFSmartLinkDeviceInfo *dev=[[WLHFSmartLinkDeviceInfo alloc] init];
 //                dev.mac = mac;
 //                dev.ip = ip;
 //                return dev;

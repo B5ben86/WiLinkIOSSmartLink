@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
-@interface Udpproxy : NSObject
+@interface WLUdpproxy : NSObject
 
 +(instancetype)shareInstence;
 -(void)CreateBindSocket;
 -(void)send:(char*)shit;
 -(void)sendMCast:(char*)shit withAddr:(char *)addr andSN:(int)sn;
 -(void)sendSmartLinkFind;
-//-(HFSmartLinkDeviceInfo *)recv;
--(HFSmartLinkDeviceInfo *)recv:(unsigned char)random;
+//-(WLHFSmartLinkDeviceInfo *)recv;
+-(WLHFSmartLinkDeviceInfo *)recv:(unsigned char)random;
 -(void)close;
 
 @end

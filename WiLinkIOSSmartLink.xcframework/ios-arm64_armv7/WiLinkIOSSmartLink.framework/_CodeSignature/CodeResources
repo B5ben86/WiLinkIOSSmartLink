@@ -4,14 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/GCDAsyncSocket.h</key>
-		<data>
-		JwDJxahaKup9fnB5MJuoxDHbdDs=
-		</data>
-		<key>Headers/GCDAsyncUdpSocket.h</key>
-		<data>
-		9hL7D86xSUKQ1TBRDa+fDNkDlqI=
-		</data>
 		<key>Headers/SmartLinkSDK.h</key>
 		<data>
 		0X1N1SliOk6ht4lzBwEXMDHJYUY=
@@ -31,28 +23,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/GCDAsyncSocket.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JwDJxahaKup9fnB5MJuoxDHbdDs=
-			</data>
-			<key>hash2</key>
-			<data>
-			JL0b2lWPgVphz/ekZLsGMKrShDXTK2YY53aKtusc9hk=
-			</data>
-		</dict>
-		<key>Headers/GCDAsyncUdpSocket.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9hL7D86xSUKQ1TBRDa+fDNkDlqI=
-			</data>
-			<key>hash2</key>
-			<data>
-			uNVm5yZ0jBhGDXZuAynPXvem1qcBvAVdWXAewQdJbh8=
-			</data>
-		</dict>
 		<key>Headers/SmartLinkSDK.h</key>
 		<dict>
 			<key>hash</key>

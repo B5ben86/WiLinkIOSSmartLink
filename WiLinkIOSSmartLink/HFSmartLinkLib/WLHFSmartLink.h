@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HFSmartLinkDeviceInfo.h"
+#import "WLHFSmartLinkDeviceInfo.h"
 
 typedef void(^SmartLinkProcessBlock)(NSInteger process);
 /**
  *  设置成功以后的Block
  *
  */
-typedef void(^SmartLinkSuccessBlock)(HFSmartLinkDeviceInfo *dev);
+typedef void(^SmartLinkSuccessBlock)(WLHFSmartLinkDeviceInfo *dev);
 /**
  *  设置失败的信息
  *
@@ -42,7 +42,7 @@ typedef void(^SmartLinkCloseBlock)(NSString * closeMsg,BOOL isOK);
  */
 typedef void(^SmartLinkEndblock)(NSDictionary * deviceDic);
 
-@interface HFSmartLink : NSObject
+@interface WLHFSmartLink : NSObject
 /**
  *  是否配置单个设备，或者多个设备 默认false
  */
