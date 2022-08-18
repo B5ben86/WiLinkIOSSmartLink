@@ -1,0 +1,6 @@
+framework module WiLinkIOSSmartLink {
+  umbrella header "WiLinkIOSSmartLink.h"
+
+  export *
+  module * { export * }
+}

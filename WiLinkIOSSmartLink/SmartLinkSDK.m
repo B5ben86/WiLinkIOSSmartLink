@@ -27,12 +27,14 @@
     self.smartLinkV7.waitTimers = 20;
 }
 
-- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd isConfigOneDeviceOnly:(BOOL)isConfigOneDeviceOnly processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
+- (void)startSmartlink:(NSString *)ssid wifiPwd:(NSString *)wifiPwd isConfigOneDeviceOnly:(BOOL)isConfigOneDeviceOnly
+        timeoutSeconds:(NSInteger)timeoutSeconds processBlock:(ProcessBlock)pblock successBlock:(SuccessBlock)sblock failBlock:(FailureBlock)fblock endBlock:(EndBlock)eblock {
     if (self.smartLinkV7 == NULL) {
         [self initSmartlink];
     }
     if (self.smartLinkV7) {
         self.smartLinkV7.isConfigOneDevice = isConfigOneDeviceOnly;
+        self.smartLinkV7.waitTimers = timeoutSeconds;
 
         [self.smartLinkV7 startWithSSID:ssid Key:wifiPwd UserStr:@"" withV3x:true processblock:^(NSInteger pro) {
             pblock(pro);

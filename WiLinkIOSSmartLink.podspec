@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WiLinkIOSSmartLink"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.8"
   spec.summary      = "WiLinkIOSSmartLink, a library to config the gateway"
 
   # This description is used to generate tags and improve search results.
@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
+  spec.platform     = :ios
   spec.platform     = :ios, "10.0"
 
   #  When using multiple platforms
@@ -91,15 +91,19 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "WiLinkIOSSmartLink/*.h", "WiLinkIOSSmartLink/*.{h,m,a}", "WiLinkIOSSmartLink/HFSmartLinkLib/*.{h,m,a}"
+  # spec.source_files  = "WiLinkIOSSmartLink/*.h", "WiLinkIOSSmartLink/*.{h,m,a}", "WiLinkIOSSmartLink/HFSmartLinkLib/*.{h,m,a}"
+   spec.source_files  = "WiLinkIOSSmartLink.xcframework/**/WiLinkIOSSmartLink.framework/Headers/*.{h,m}"
+  # spec.source_files  = "WiLinkIOSSmartLink.framework/Headers/*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
-  # spec.public_header_files = "WiLinkIOSSmartLink/*.h"
+   spec.public_header_files = "WiLinkIOSSmartLink.xcframework/**/WiLinkIOSSmartLink.framework/Headers/*.h"
+  # spec.public_header_files = "WiLinkIOSSmartLink.framework/Headers/*.h"
 
-  # spec.static_framework = true
+  spec.static_framework = true
 
   # Published binaries
-  # spec.vendored_frameworks = "WiLinkIOSSmartLink"
+  # spec.vendored_frameworks = "WiLinkIOSSmartLink.framework"
+   spec.vendored_frameworks = "WiLinkIOSSmartLink.xcframework"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

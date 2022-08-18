@@ -6,6 +6,20 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B576D8EC28ACFD1300C6CB8B /* createFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B576D8ED28ACFD1300C6CB8B /* Build configuration list for PBXAggregateTarget "createFramework" */;
+			buildPhases = (
+				B576D8F028ACFD2E00C6CB8B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = createFramework;
+			productName = createFramework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		B537F89828927FF400ACFD8C /* WiLinkIOSSmartLink.docc in Sources */ = {isa = PBXBuildFile; fileRef = B537F89728927FF400ACFD8C /* WiLinkIOSSmartLink.docc */; };
 		B537F89E28927FF400ACFD8C /* WiLinkIOSSmartLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B537F89328927FF400ACFD8C /* WiLinkIOSSmartLink.framework */; };
@@ -14,12 +28,15 @@
 		B537F8B42892842900ACFD8C /* HFSmartLinkDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8AF2892842900ACFD8C /* HFSmartLinkDeviceInfo.h */; };
 		B537F8BF289284FE00ACFD8C /* SmartLinkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8BD289284FE00ACFD8C /* SmartLinkSDK.m */; };
 		B537F8CD2892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8C52892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m */; };
-		B537F8D928936A4A00ACFD8C /* Udpproxy2.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D228936A4A00ACFD8C /* Udpproxy2.m */; };
 		B537F8DA28936A4A00ACFD8C /* HFSmartLink.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D328936A4A00ACFD8C /* HFSmartLink.m */; };
 		B537F8DB28936A4A00ACFD8C /* Udpproxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D428936A4A00ACFD8C /* Udpproxy.m */; };
 		B537F8DE28936A4A00ACFD8C /* Udpproxy2.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8D728936A4A00ACFD8C /* Udpproxy2.h */; };
 		B537F8DF28936A4A00ACFD8C /* Udpproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8D828936A4A00ACFD8C /* Udpproxy.h */; };
 		B537F8E02893B63C00ACFD8C /* SmartLinkSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B576D8FD28ADD33100C6CB8B /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B576D8F928ADD33100C6CB8B /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B576D8FE28ADD33100C6CB8B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B576D8FA28ADD33100C6CB8B /* GCDAsyncSocket.m */; };
+		B576D8FF28ADD33100C6CB8B /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B576D8FB28ADD33100C6CB8B /* GCDAsyncUdpSocket.m */; };
+		B576D90028ADD33100C6CB8B /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B576D8FC28ADD33100C6CB8B /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59FBBB72893C7C800BE2449 /* HFSmartLink.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8B22892842900ACFD8C /* HFSmartLink.h */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +68,10 @@
 		B537F8D628936A4A00ACFD8C /* hf-pmk-generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "hf-pmk-generator.c"; sourceTree = "<group>"; };
 		B537F8D728936A4A00ACFD8C /* Udpproxy2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Udpproxy2.h; sourceTree = "<group>"; };
 		B537F8D828936A4A00ACFD8C /* Udpproxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Udpproxy.h; sourceTree = "<group>"; };
+		B576D8F928ADD33100C6CB8B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		B576D8FA28ADD33100C6CB8B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		B576D8FB28ADD33100C6CB8B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		B576D8FC28ADD33100C6CB8B /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +131,14 @@
 		B537F89528927FF400ACFD8C /* WiLinkIOSSmartLink */ = {
 			isa = PBXGroup;
 			children = (
-				B52E40A22897B089008CD952 /* HFSmartLinkLib */,
-				B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */,
-				B537F8BD289284FE00ACFD8C /* SmartLinkSDK.m */,
 				B537F89728927FF400ACFD8C /* WiLinkIOSSmartLink.docc */,
+				B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */,
 				B537F89628927FF400ACFD8C /* WiLinkIOSSmartLink.h */,
+				B537F8BD289284FE00ACFD8C /* SmartLinkSDK.m */,
+				B576D8F928ADD33100C6CB8B /* GCDAsyncSocket.h */,
+				B576D8FC28ADD33100C6CB8B /* GCDAsyncUdpSocket.h */,
+				B576D8F828ADD27800C6CB8B /* CocoaAsyncSocket */,
+				B52E40A22897B089008CD952 /* HFSmartLinkLib */,
 			);
 			path = WiLinkIOSSmartLink;
 			sourceTree = "<group>";
@@ -127,6 +151,15 @@
 			path = WiLinkIOSSmartLinkTests;
 			sourceTree = "<group>";
 		};
+		B576D8F828ADD27800C6CB8B /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				B576D8FA28ADD33100C6CB8B /* GCDAsyncSocket.m */,
+				B576D8FB28ADD33100C6CB8B /* GCDAsyncUdpSocket.m */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -134,8 +167,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B576D90028ADD33100C6CB8B /* GCDAsyncUdpSocket.h in Headers */,
 				B59FBBB72893C7C800BE2449 /* HFSmartLink.h in Headers */,
 				B537F8B42892842900ACFD8C /* HFSmartLinkDeviceInfo.h in Headers */,
+				B576D8FD28ADD33100C6CB8B /* GCDAsyncSocket.h in Headers */,
 				B537F8E02893B63C00ACFD8C /* SmartLinkSDK.h in Headers */,
 				B537F8DE28936A4A00ACFD8C /* Udpproxy2.h in Headers */,
 				B537F8DF28936A4A00ACFD8C /* Udpproxy.h in Headers */,
@@ -197,6 +232,9 @@
 					B537F89C28927FF400ACFD8C = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					B576D8EC28ACFD1300C6CB8B = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 				};
 			};
 			buildConfigurationList = B537F88D28927FF400ACFD8C /* Build configuration list for PBXProject "WiLinkIOSSmartLink" */;
@@ -214,6 +252,7 @@
 			targets = (
 				B537F89228927FF400ACFD8C /* WiLinkIOSSmartLink */,
 				B537F89C28927FF400ACFD8C /* WiLinkIOSSmartLinkTests */,
+				B576D8EC28ACFD1300C6CB8B /* createFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -235,17 +274,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B576D8F028ACFD2E00C6CB8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "scripts/build-framework.sh WiLinkIOSSmartLink\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B537F88F28927FF400ACFD8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B576D8FE28ADD33100C6CB8B /* GCDAsyncSocket.m in Sources */,
 				B537F8DB28936A4A00ACFD8C /* Udpproxy.m in Sources */,
 				B537F8BF289284FE00ACFD8C /* SmartLinkSDK.m in Sources */,
 				B537F89828927FF400ACFD8C /* WiLinkIOSSmartLink.docc in Sources */,
+				B576D8FF28ADD33100C6CB8B /* GCDAsyncUdpSocket.m in Sources */,
 				B537F8CD2892CC3C00ACFD8C /* HFSmartLinkDeviceInfo.m in Sources */,
 				B537F8DA28936A4A00ACFD8C /* HFSmartLink.m in Sources */,
-				B537F8D928936A4A00ACFD8C /* Udpproxy2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -379,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -394,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -429,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -489,6 +551,24 @@
 			};
 			name = Release;
 		};
+		B576D8EE28ACFD1300C6CB8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5XMK8GS2L;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B576D8EF28ACFD1300C6CB8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5XMK8GS2L;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -515,6 +595,15 @@
 			buildConfigurations = (
 				B537F8AB28927FF400ACFD8C /* Debug */,
 				B537F8AC28927FF400ACFD8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B576D8ED28ACFD1300C6CB8B /* Build configuration list for PBXAggregateTarget "createFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B576D8EE28ACFD1300C6CB8B /* Debug */,
+				B576D8EF28ACFD1300C6CB8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
