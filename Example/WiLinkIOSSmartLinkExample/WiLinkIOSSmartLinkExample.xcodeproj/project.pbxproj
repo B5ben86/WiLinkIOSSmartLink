@@ -15,22 +15,7 @@
 		B59FBBFA2893DE8000BE2449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59FBBF82893DE8000BE2449 /* LaunchScreen.storyboard */; };
 		B59FBBFD2893DE8000BE2449 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B59FBBFC2893DE8000BE2449 /* main.m */; };
 		B59FBC052893E1BC00BE2449 /* WiLinkIOSSmartLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59FBC042893E1BC00BE2449 /* WiLinkIOSSmartLink.framework */; };
-		B59FBC062893E1BC00BE2449 /* WiLinkIOSSmartLink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B59FBC042893E1BC00BE2449 /* WiLinkIOSSmartLink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B59FBC072893E1BC00BE2449 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B59FBC062893E1BC00BE2449 /* WiLinkIOSSmartLink.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B59FBBE72893DE7F00BE2449 /* WiLinkIOSSmartLinkExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiLinkIOSSmartLinkExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +98,6 @@
 				B59FBBE32893DE7F00BE2449 /* Sources */,
 				B59FBBE42893DE7F00BE2449 /* Frameworks */,
 				B59FBBE52893DE7F00BE2449 /* Resources */,
-				B59FBC072893E1BC00BE2449 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,7 +304,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G5XMK8GS2L;
+				DEVELOPMENT_TEAM = 6RULT6QM2L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WiLinkIOSSmartLinkExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -348,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G5XMK8GS2L;
+				DEVELOPMENT_TEAM = 6RULT6QM2L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WiLinkIOSSmartLinkExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -1,4 +1,4 @@
-#include "hf-pmk-generator.h"
+#include "wlhf-pmk-generator.h"
 #include <string.h>
 
 #define SHA1_MAC_LEN 20

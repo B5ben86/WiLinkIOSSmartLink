@@ -32,6 +32,7 @@
 		B537F8DB28936A4A00ACFD8C /* WLUdpproxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D428936A4A00ACFD8C /* WLUdpproxy.m */; };
 		B537F8DF28936A4A00ACFD8C /* WLUdpproxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8D828936A4A00ACFD8C /* WLUdpproxy.h */; };
 		B537F8E02893B63C00ACFD8C /* SmartLinkSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8BC289284FE00ACFD8C /* SmartLinkSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B538B93428B36FA300164313 /* wlhf-pmk-generator.c in Sources */ = {isa = PBXBuildFile; fileRef = B537F8D628936A4A00ACFD8C /* wlhf-pmk-generator.c */; };
 		B59FBBB72893C7C800BE2449 /* WLHFSmartLink.h in Headers */ = {isa = PBXBuildFile; fileRef = B537F8B22892842900ACFD8C /* WLHFSmartLink.h */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +60,8 @@
 		B537F8D228936A4A00ACFD8C /* Udpproxy2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Udpproxy2.m; sourceTree = "<group>"; };
 		B537F8D328936A4A00ACFD8C /* WLHFSmartLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLHFSmartLink.m; sourceTree = "<group>"; };
 		B537F8D428936A4A00ACFD8C /* WLUdpproxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUdpproxy.m; sourceTree = "<group>"; };
-		B537F8D528936A4A00ACFD8C /* hf-pmk-generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hf-pmk-generator.h"; sourceTree = "<group>"; };
-		B537F8D628936A4A00ACFD8C /* hf-pmk-generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "hf-pmk-generator.c"; sourceTree = "<group>"; };
+		B537F8D528936A4A00ACFD8C /* wlhf-pmk-generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wlhf-pmk-generator.h"; sourceTree = "<group>"; };
+		B537F8D628936A4A00ACFD8C /* wlhf-pmk-generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "wlhf-pmk-generator.c"; sourceTree = "<group>"; };
 		B537F8D728936A4A00ACFD8C /* Udpproxy2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Udpproxy2.h; sourceTree = "<group>"; };
 		B537F8D828936A4A00ACFD8C /* WLUdpproxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUdpproxy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,8 +88,8 @@
 		B52E40A22897B089008CD952 /* HFSmartLinkLib */ = {
 			isa = PBXGroup;
 			children = (
-				B537F8D628936A4A00ACFD8C /* hf-pmk-generator.c */,
-				B537F8D528936A4A00ACFD8C /* hf-pmk-generator.h */,
+				B537F8D628936A4A00ACFD8C /* wlhf-pmk-generator.c */,
+				B537F8D528936A4A00ACFD8C /* wlhf-pmk-generator.h */,
 				B537F8B22892842900ACFD8C /* WLHFSmartLink.h */,
 				B537F8D328936A4A00ACFD8C /* WLHFSmartLink.m */,
 				B537F8AF2892842900ACFD8C /* WLHFSmartLinkDeviceInfo.h */,
@@ -275,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B538B93428B36FA300164313 /* wlhf-pmk-generator.c in Sources */,
 				B537F8DB28936A4A00ACFD8C /* WLUdpproxy.m in Sources */,
 				B537F8BF289284FE00ACFD8C /* SmartLinkSDK.m in Sources */,
 				B537F89828927FF400ACFD8C /* WiLinkIOSSmartLink.docc in Sources */,

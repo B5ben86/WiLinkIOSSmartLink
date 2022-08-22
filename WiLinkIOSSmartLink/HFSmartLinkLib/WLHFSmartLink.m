@@ -9,6 +9,7 @@
 #import "WLHFSmartLink.h"
 #import "WLUdpproxy.h"
 #import <CommonCrypto/CommonKeyDerivation.h>
+#import "wlhf-pmk-generator.h"
 
 #define SMTV30_BASELEN      76
 #define SMTV30_STARTCODE      '\r'
@@ -108,12 +109,12 @@
     
     unsigned char buf[33];
     memset(buf, 0, 33);
-//    pbkdf2_sha1([pswdStr UTF8String], [ssidStr UTF8String], ssidLen, 4096, buf, 32);
+    pbkdf2_sha1([pswdStr UTF8String], [ssidStr UTF8String], ssidLen, 4096, buf, 32);
     
-    NSData *passwordData = [pswdStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *ssidData = [ssidStr dataUsingEncoding:NSUTF8StringEncoding];
-    int rounds = CCCalibratePBKDF(kCCPBKDF2, passwordData.length, ssidData.length, kCCPRFHmacAlgSHA1, 32, 100);
-    CCKeyDerivationPBKDF(kCCPBKDF2, passwordData.bytes, passwordData.length, ssidData.bytes, ssidData.length, kCCPRFHmacAlgSHA1, rounds, buf, 32);
+//    NSData *passwordData = [pswdStr dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData *ssidData = [ssidStr dataUsingEncoding:NSUTF8StringEncoding];
+//    int rounds = CCCalibratePBKDF(kCCPBKDF2, passwordData.length, ssidData.length, kCCPRFHmacAlgSHA1, 32, 100);
+//    CCKeyDerivationPBKDF(kCCPBKDF2, passwordData.bytes, passwordData.length, ssidData.bytes, ssidData.length, kCCPRFHmacAlgSHA1, rounds, buf, 32);
     
     char contC[200];
     int contC_len=0;
